@@ -32,4 +32,17 @@ npm start
 
 * Refer to the next video that includes how to run it from the terminal [Terminal Mock]( )
 
+ ##  Contributing
+* Add your comments to this repository by commenting on specific lines of code in the repository.
+
+* How to Comment:
+- Navigate to a specific file in the repository under the “Code” tab.
+- Browse to the desired line of code.
+- Click the line number to add an inline comment.
+
+
+ ##  Questions
+For any questions, please contact me using the information below:
+- GitHub: [gabipayan](https://github.com/gabipayan)
+- Email: [gapayan26@gmail.com](gapayan26@gmail.com)
  
