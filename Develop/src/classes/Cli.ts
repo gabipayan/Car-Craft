@@ -61,7 +61,7 @@ class Cli {
           name: 'vehicleType',
           message: 'Select a vehicle type',
           // TODO: Update the choices array to include Truck and Motorbike
-          choices: ['Car, Truck, Motorbike'],
+          choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
       .then((answers) => {
@@ -172,23 +172,23 @@ class Cli {
       ])
       .then((answers) => {
         // TODO: Use the answers object to pass the required properties to the Truck constructor
-const truck = new Truck(
-  Cli.generateVin(),
-  answers.color,
-  answers.make,
-  answers.model,
-  parseInt(answers.year),
-  parseInt(answers.weight),
-  parseInt(answers.topSpeed),
-  [],
-  parseInt(answers.towingCapacity)
-);
-// TODO: push the truck to the vehicles array
-this.vehicles.push(truck);
-// TODO: set the selectedVehicleVin to the vin of the truck
-this.selectedVehicleVin = truck.vin;
-// TODO: perform actions on the truck
-this.performActions();
+        const truck = new Truck(
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
+          [],
+          parseInt(answers.towingCapacity)
+        );
+        // TODO: push the truck to the vehicles array
+        this.vehicles.push(truck);
+        // TODO: set the selectedVehicleVin to the vin of the truck
+        this.selectedVehicleVin = truck.vin;
+        // TODO: perform actions on the truck
+        this.performActions();
       });
   }
 
@@ -295,10 +295,20 @@ this.performActions();
         },
       ])
       .then((answers) => {
-        // ***I finished here to solve the problem***GGP
+        const vehicleToTow = answers.vehicleToTow;
         // TODO: check if the selected vehicle is the truck 
+        const selectedTruck = this.vehicles.find(
+          (vehicle) => vehicle.vin === this.selectedVehicleVin && vehicle instanceof Truck
+        );
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
-        // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+        if (selectedTruck && vehicleToTow === vehicleToTow) {
+          // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
+          console.log('A truck cannot tow itself');
+          this.performActions();
+        } else if (selectedTruck && vehicleToTow) {
+          console.log('Towing the vehicle');
+          this.performActions();
+        }
       });
   }
 
