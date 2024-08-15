@@ -15,7 +15,7 @@ class Cli {
   exit: boolean = false;
 
   // TODO: Update the constructor to accept Truck and Motorbike objects as well
-  constructor(vehicles: (Car)[]) {
+  constructor(vehicles: (Car | Truck | Motorbike)[]) {
     this.vehicles = vehicles;
   }
 
@@ -68,8 +68,14 @@ class Cli {
         if (answers.vehicleType === 'Car') {
           // create a car
           this.createCar();
+          // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
+        } else if (answers.vehicleType === 'Truck') {
+          // create a truck
+          this.createTruck();
+        } else if (answers.vehicleType === 'Motorbike') {
+          // create a motorbike
+          this.createMotorbike();
         }
-        // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
       });
   }
 
@@ -111,7 +117,6 @@ class Cli {
       .then((answers) => {
         const car = new Car(
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
-          // I haven't solved this yet
           Cli.generateVin(),
           answers.color,
           answers.make,
