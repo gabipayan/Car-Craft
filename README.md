@@ -30,7 +30,7 @@ npm install
 npm start
 ```
 
-* Refer to the next video that includes how to run it from the terminal [Terminal Mock]( )
+* Refer to the next video that includes how to run it from the terminal [Terminal Mock](https://drive.google.com/file/d/1pyYJFInSRIiNTyoHFQgXbq7Vic5sFX_r/view?usp=sharing)
 
  ##  Contributing
 * Add your comments to this repository by commenting on specific lines of code in the repository.
